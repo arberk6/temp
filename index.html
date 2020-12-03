@@ -2,106 +2,118 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ushtrimet 5</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .link-container>a {
+      color: red;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="header">
-        <div class='opacity'>
+  <div class="header">
+    <img id="ubtlogo" class="headerPhoto" src="UBT-LOGO.png" alt="UBT Logo" />
+    <ul class="headerList">
+      <li id="item1">Home</li>
+      <li id="item">About us</li>
+      <li>Contact</li>
+    </ul>
+  </div>
 
-        </div>
-        <div class='header-content'>
-            <h4 id='small-title' class='header-text '>lorem ipsum</h4>
-            <h1 class='header-text'>Better Solution At</h1>
-            <h1 class='header-text'>Lorem ipsum</h1>
-            <ul class='header-list'>
-                <li><a href="#"> Contact us</a></li>
-                <li><a href="#"> Learn more</a></li>
-            </ul>
-        </div>
-
+  <div class="container">
+    <div class="link-container">
+      <a id="firstA" href="#" onclick="changeForm(0)">Login</a>
+      <a href="#" onclick="changeForm(1)">Register</a>
     </div>
-    <div class='container-middle'>
-        <div class="containter-upper">
-            <h1>lorem ipsum</h1>
-            <div class='lines'>
-                <div></div><!-- lines under the Smart Solution -->
-                <div></div>
-                <div></div>
-            </div>
-            <div class='row'>
-                <div class='box-container'>
-                    <img src="img/UBT-LOGO.png" alt="thumbsup">
-                    <h4>title</h4>
-                    <p>lorem ipsum text generator</p>
-                </div>
-                <div class='box-container'>
-                    <img src="img/UBT-LOGO.png" alt="people">
-                    <h4>title</h4>
-                    <p>lorem ipsum text generator</p>
-                </div>
-                <div class='box-container'>
-                    <img src="img/UBT-LOGO.png" alt="upload">
-                    <h4>title</h4>
-                    <p>lorem ipsum text generator</p>
-                </div>
-            </div>
-        </div>
-        <div class='middle-lower'>
-            <div id='lowerOpacity' class='opacity'>
+    <form id="mainForm" action="">
+      <div class="login forms form-style">
+        <label for="">Username:</label>
+        <input type="text" class="input" placeholder="username..." />
+        <label for="">Password:</label>
+        <input type="password" class="input" placeholder="password..." />
+        <input id="submit" type="button" class="input submit" value="Login" onclick="validate(0)" />
+      </div>
+      <div class="register forms hidden">
+        <label for="">Name:</label>
+        <input type="text" class="input" placeholder="username..." />
+        <label for="">Password:</label>
+        <input type="text" class="input" placeholder="password..." />
+        <label for="">Password:</label>
+        <input type="text" class="input" placeholder="password..." />
+        <input id="submit" type="button" class="input submit" value="Register" onclick="validate(1)" />
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <i>&copy;</i>
 
-            </div>
-            <div class='container-player'>
-                <img src="img/UBT-LOGO.png" alt="playericon">
-                <h1>lorem ipsum title</h1>
-            </div>
-        </div>
+    <h3>UBT - Prill 2020</h3>
+  </div>
+  <script>
+    var num = 3;
+    var str = "arber";
+    var str1 = '';
+    var bool = true;
+    var nul = null;
+    var undef = NaN;
+    var arr = ["", ""]
 
-        <div class="statistics">
-            <div class="statistics-navigation">
-                <div class="statistics-box">
-                    <img src="img/UBT-LOGO.png" alt="">
-                    <h2>lorem ipsum</h2>
-                    <h5>lorem ipsum</h5>
-                </div>
-                <div class="statistics-box">
-                    <img src="img/UBT-LOGO.png" alt="">
-                    <h2>lorem ipsum</h2>
-                    <h5>lorem ipsum</h5>
-                </div>
-                <div class="statistics-box">
-                    <img src="img/UBT-LOGO.png" alt="">
-                    <h2>lorem ipsum</h2>
-                    <h5>lorem ipsum</h5>
-                </div>
-                <div class="statistics-box">
-                    <img src="img/UBT-LOGO.png" alt="">
-                    <h2>lorem ipsum</h2>
-                    <h5>lorem ipsum</h5>
-                </div>
-            </div>
-            <div class="statistics-below">
-                <div class="img-box">
-                    <img src="img/UBT-LOGO.png" alt="">
-                </div>
-                <div class="learn-more-box">
-                    <h1>lorem ipsum</h1>
-                    <ul id='list'>
-                        <li>lorem</li>
-                        <li>ipsum</li>
-                        <li>dolor</li>
-                        <li>sit</li>
-                    </ul>
-                    <button>Learn more</button>
-                </div>
-            </div>
-        </div>
+    function changeForm(number) {
+      var divLista = document.getElementsByClassName('forms');
+      if (number == 0) {
+        //shfaq login
+        divLista[0].classList.add('form-style');
+        divLista[0].classList.remove('hidden');
+        //hide register
+        divLista[1].classList.add('hidden');
+        divLista[1].classList.remove('form-style');
+      } else if (number == 1) {
+        //shfaq register
+        divLista[1].classList.add('form-style');
+        divLista[1].classList.remove('hidden');
+        //hide login
+        divLista[0].classList.add('hidden');
+        divLista[0].classList.remove('form-style');
+      }
+    }
+
+    // public void validate(int number){
+
+    // }
+    const user = "arber";
+    const pass = "123456";
+
+    function validate(number) {
+      var inputs = document.getElementsByClassName("input");
+      if (number == 0) {
+        //login
+        if (inputs[0].value == "" || inputs[1].value == "") {
+          alert('please fill user and pass');
+        } else {
+          alert('login success')
+        }
+
+      } else if (number == 1) {
+        //register
+      }
+    }
+
+    // console.log('test ' + str);
+
+    // var el = document.getElementById('item1');
+    // var el1 = document.querySelector(".link-container>a");
+    // var el2 = document.querySelectorAll(".link-container>a");
+
+    // var el4 = document.getElementsByTagName("img");
+    // var el4 = document.getElementsByName("test");
 
 
-    </div>
+    console.log("my input value is " + inputs[0].value);
+  </script>
 </body>
 
 </html>
